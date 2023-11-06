@@ -18,7 +18,7 @@ namespace EmployeeManagementAPI.Controllers
             _employeeService = employeeService;
         }
 
-        // GET: api/<EmployeeController>
+        // GET: api/<EmployeeController> get all employees
         [HttpGet]
         public ActionResult<IEnumerable<Employee>> Get()
         {
