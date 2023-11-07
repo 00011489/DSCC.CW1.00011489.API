@@ -13,6 +13,7 @@ namespace EmployeeManagementAPI.Services
             this.db = db;
         }
 
+        //Add a new employee
         public IEnumerable<Employee> AddEmployee(EmployeeDto employeeCreateDto)
         {
             if (employeeCreateDto == null) throw new ArgumentNullException();
@@ -24,6 +25,7 @@ namespace EmployeeManagementAPI.Services
             return getEmployeeList();
         }
 
+        //Delete Employee by ID
         public Boolean DeleteEmployee(int id)
         {
             Employee employee = db.Employees.Find(id);
@@ -40,15 +42,20 @@ namespace EmployeeManagementAPI.Services
             }
         }
 
+        //Get all Employees list
         public List<Employee> GetAllEmployees()
         {
             return getEmployeeList();
         }
 
+
+        //Get Employee by id
         public Employee GetEmployeeById(int id)
         {
             return db.Employees.Find(id);
         }
+
+        //Update employee
 
         public IEnumerable<Employee> UpdateEmployee(Employee employee)
         {
@@ -65,11 +72,13 @@ namespace EmployeeManagementAPI.Services
             return getEmployeeList();
         }
 
+        // to get Employees in sorted order, ascending by their ID
         private List<Employee> getEmployeeList()
         {
             return db.Employees.OrderBy(e => e.Id).ToList();
         }
 
+        //Mapper to change EmployeeDto to Employee object
         private Employee getEmployeeFromCreateDto(EmployeeDto dto)
         {
             return new Employee

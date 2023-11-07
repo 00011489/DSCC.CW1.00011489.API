@@ -32,7 +32,7 @@ namespace EmployeeManagementAPI.Controllers
             return _employeeService.GetEmployeeById(id);
         }
 
-        // POST api/<EmployeeController>
+        // POST api/<EmployeeController> to create an employee
         [HttpPost]
         public ActionResult<IEnumerable<Employee>> Post([FromBody] EmployeeDto createDto)
         {
@@ -40,7 +40,7 @@ namespace EmployeeManagementAPI.Controllers
             return new ActionResult<IEnumerable<Employee>>(updatedEmployeeList);
         }
 
-        // PUT api/<EmployeeController>/5
+        // PUT api/<EmployeeController>/5 to UPDATE an existing employee data
         [HttpPut("{id}")]
         public ActionResult<IEnumerable<Employee>> Update(int id, [FromBody] Employee employee)
         {

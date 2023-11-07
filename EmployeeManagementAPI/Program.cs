@@ -19,7 +19,7 @@ builder.Services.AddDbContext<EmployeeDb>(
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline. aa
+// Configure the HTTP request pipeline for development and production purposes
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();

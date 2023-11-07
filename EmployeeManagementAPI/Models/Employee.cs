@@ -7,6 +7,7 @@ namespace EmployeeManagementAPI.Models
     public class Employee
     {
 
+        //Used DatabaseGeneratedOption to generate ID in database side
         [Key, Required]
         [Column("employee_id")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
